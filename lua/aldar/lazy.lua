@@ -13,4 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Настройка плагинов
-require("lazy").setup("aldar.plugins")
+require("lazy").setup({ { import = "aldar.plugins" }, { import = "aldar.plugins.lsp" } }, {
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  }
+})
